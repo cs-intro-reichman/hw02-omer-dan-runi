@@ -5,5 +5,18 @@
 public class Reverse {
 	public static void main (String[] args){
 		//// Put your code here
+		String input = args[0];
+		int length = input.length();
+		char middle = input.charAt(length / 2);
+		int flag = 0;
+
+		while (flag <= length - 1)
+		{
+			System.out.print(input.charAt(flag));
+
+			flag++;
+		}
+
+		System.out.print("\nThe middle character is " + middle);
 	}
 }
