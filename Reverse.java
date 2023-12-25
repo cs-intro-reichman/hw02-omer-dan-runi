@@ -8,13 +8,13 @@ public class Reverse {
 		String input = args[0];
 		int length = input.length();
 		char middle = input.charAt(length / 2);
-		int flag = 0;
+		int flag = length -1;
 
-		while (flag <= length - 1)
+		while (flag >= 0)
 		{
 			System.out.print(input.charAt(flag));
 
-			flag++;
+			flag--;
 		}
 
 		System.out.print("\nThe middle character is " + middle);

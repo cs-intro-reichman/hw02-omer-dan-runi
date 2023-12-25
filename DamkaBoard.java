@@ -12,20 +12,23 @@ public class DamkaBoard {
 
 		while (i < num)
 		{
-			while (j < num)
+			if (i % 2 == 0)
 			{
-				System.out.print("* ");
+				// Adding a * as the first char.
+				System.out.print("*");
+				// Incrementing j
 				j++;
 			}
 
-			System.out.println();
-			if (i % 2 == 0)
+			while (j < num)
 			{
-				// Adding a space as the first char.
-				System.out.print(" ");
+				System.out.print(" *");
+				j++;
 			}
-
+			// Resetting j
 			j = 0;
+
+			System.out.println();
 			i++;
 		}
 	}

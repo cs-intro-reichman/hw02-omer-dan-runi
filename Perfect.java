@@ -21,7 +21,7 @@ public class Perfect {
 			if (num % flag == 0)
 			{
 				count += flag;
-				perfectNumString += " + " + count;
+				perfectNumString += " + " + flag;
 			}
 
 			flag++;
