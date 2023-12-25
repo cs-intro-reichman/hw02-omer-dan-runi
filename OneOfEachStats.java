@@ -29,50 +29,33 @@ public class OneOfEachStats {
 		boolean girl = false;
 		int boys = 0;
 		int girls = 0;
+		int totalChildren = 0;
 		int twoChildrens = 0;
 		int threeChildrens = 0;
 		int fourOrMoreChildren = 0;
 		int childCount = 0;
 
-		double ran = generator.nextDouble();
-		
 		for (int i = 0; i < families; i++)
 		{
 			// Receiving 0 or 1, 0 for boys and 1 for girls, cause boys are losers and girls are number 1!
-			// (Im a boy pls dont cancel me)
-			int child = (int) (2 * ran);
-			boy = (child == 0);
-			girl = (child == 1);
-			childCount++;
-
-			if (boy)
-			{
-				boys++;
-			}
-			else
-			{
-				girls++;
-			}
-
-		
+			// (Im a boy pls dont cancel me)		
 			while (!(boy && girl))
 			{
+				double rnd = generator.nextDouble();
+				totalChildren++;
 
-				ran = generator.nextDouble();
-				child = (int) (2 * ran);
-
-				boy = boy || (child == 0);
-				girl = girl || (child == 1);
-				childCount++;
-
-				if (child == 0)
+				if (rnd > 0.5)
 				{
-					boys++;
+					girl = true;
+					girls++;
 				}
 				else
 				{
-					girls++;
+					boy = true;
+					boys++;
 				}
+				
+				childCount++;
 			}
 
 			if (childCount == 2)
@@ -88,6 +71,8 @@ public class OneOfEachStats {
 				fourOrMoreChildren++;
 			}
 
+			boy = false;
+			girl = false;
 			childCount = 0;
 		}
 
@@ -104,9 +89,9 @@ public class OneOfEachStats {
 		{
 			mostCommon = 4;
 		}
-		
+
 		System.out.println("Average: "
-						   + ((double) (boys + girls) / families)
+						   + ((double) (totalChildren) / families)
 						   + " children to get at least one of each gender.");
 		System.out.println("Number of families with 2 children: " + twoChildrens);
 		System.out.println("Number of families with 3 children: " + threeChildrens);
