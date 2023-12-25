@@ -29,7 +29,7 @@ public class DamkaBoard {
 			j = 0;
 
 			// This is unnecessary, its just so the test will pass
-			if (i % 2 != 0)
+			if (i % 2 == 0)
 			{
 				// Adding a " " as the last char.
 				System.out.print(" ");
